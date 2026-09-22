@@ -1,4 +1,20 @@
 # ============================================================
+# Non C/C++ files — keep repo clean
+# ============================================================
+images/
+*.qrc
+*.png
+*.jpg
+*.py
+.vscode/
+
+# PlatformIO plain-text READMEs (not source)
+ESP32_Parking_Project/include/README
+ESP32_Parking_Project/lib/README
+ESP32_Parking_Project/test/README
+ESP32_Parking_Project/.gitignore
+
+# ============================================================
 # Qt / CMake build artifacts
 # ============================================================
 build*/
