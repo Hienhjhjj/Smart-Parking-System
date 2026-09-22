@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserDialog</class>
+ <widget class="QDialog" name="UserDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Thông tin người dùng</string>
+  </property>
+
+  <layout class="QVBoxLayout" name="mainLayout">
+
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelUserCode">
+       <property name="text">
+        <string>Mã người dùng:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="txtUserCode"/>
+     </item>
+
+
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelUserName">
+       <property name="text">
+        <string>Họ tên:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="txtUserName"/>
+     </item>
+
+
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelDepartment">
+       <property name="text">
+        <string>Phòng ban:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="txtDepartment"/>
+     </item>
+
+
+     <item row="3" column="0">
+      <widget class="QLabel" name="labelFingerprint">
+       <property name="text">
+        <string>ID vân tay:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="3" column="1">
+      <widget class="QSpinBox" name="spinFingerprint">
+       <property name="minimum">
+        <number>-1</number>
+       </property>
+       <property name="maximum">
+        <number>10000</number>
+       </property>
+       <property name="value">
+        <number>-1</number>
+       </property>
+      </widget>
+     </item>
+
+
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelStatus">
+       <property name="text">
+        <string>Trạng thái:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="4" column="1">
+      <widget class="QComboBox" name="cmbStatus"/>
+     </item>
+
+
+     <item row="5" column="0">
+      <widget class="QLabel" name="labelNote">
+       <property name="text">
+        <string>Ghi chú:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="txtNote"/>
+     </item>
+
+    </layout>
+   </item>
+
+
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+    </spacer>
+   </item>
+
+
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+      </spacer>
+     </item>
+
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+
+    </layout>
+   </item>
+
+  </layout>
+ </widget>
+
+ <resources/>
+ <connections>
+
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>UserDialog</receiver>
+   <slot>accept()</slot>
+  </connection>
+
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>UserDialog</receiver>
+   <slot>reject()</slot>
+  </connection>
+
+ </connections>
+</ui>

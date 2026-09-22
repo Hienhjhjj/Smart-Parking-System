@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>HỆ THỐNG KIỂM SOÁT CỔNG RA VÀO CỦA BÃI ĐỖ XE NỘI BỘ</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <widget class="QWidget" name="tabOverview">
+       <attribute name="title">
+        <string>Tổng quan</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="overviewLayout">
+        <item>
+         <widget class="QLabel" name="lblTitle">
+          <property name="styleSheet">
+           <string notr="true">font-size:22px; font-weight:bold; color:#1565C0;</string>
+          </property>
+          <property name="text">
+           <string>HỆ THỐNG KIỂM SOÁT CỔNG RA VÀO CỦA BÃI ĐỖ XE NỘI BỘ</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="dashboardLayout">
+          <item row="0" column="2">
+           <widget class="QGroupBox" name="groupOnline">
+            <property name="title">
+             <string>Thiết bị Online</string>
+            </property>
+            <layout class="QVBoxLayout">
+             <item>
+              <widget class="QLabel" name="lbOnline">
+               <property name="styleSheet">
+                <string notr="true">font-size:28px; font-weight:bold; color:#2E7D32;</string>
+               </property>
+               <property name="text">
+                <string>3 / 4</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="groupToday">
+            <property name="title">
+             <string>Lượt hôm nay</string>
+            </property>
+            <layout class="QVBoxLayout">
+             <item>
+              <widget class="QLabel" name="lbToday">
+               <property name="styleSheet">
+                <string notr="true">font-size:28px; font-weight:bold; color:#FB8C00;</string>
+               </property>
+               <property name="text">
+                <string>126</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupUsers">
+            <property name="title">
+             <string>Người dùng</string>
+            </property>
+            <layout class="QVBoxLayout">
+             <item>
+              <widget class="QLabel" name="lbTotalUsers">
+               <property name="styleSheet">
+                <string notr="true">font-size:28px; font-weight:bold; color:#1565C0;</string>
+               </property>
+               <property name="text">
+                <string>25</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="mainInfoLayout">
+          <item>
+           <widget class="QGroupBox" name="groupSystemStatus">
+            <property name="title">
+             <string>Trạng thái hệ thống</string>
+            </property>
+            <layout class="QFormLayout" name="systemStatusLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="labelESP">
+               <property name="text">
+                <string>ESP32</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="lbESP">
+               <property name="text">
+                <string>Offline</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="labelBLE">
+               <property name="text">
+                <string>BLE</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="lbBLE">
+               <property name="text">
+                <string>Disconnected</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="labelSQLite">
+               <property name="text">
+                <string>SQLite</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="lbSQLite">
+               <property name="text">
+                <string>Ready</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="labelSensor">
+               <property name="text">
+                <string>VL53L0X</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="lbSensor">
+               <property name="text">
+                <string>Sẵn sàng</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="labelFingerSensor">
+               <property name="text">
+                <string>AS608</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="lbFinger">
+               <property name="text">
+                <string>Ready</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="labelServo">
+               <property name="text">
+                <string>Servo Barrier</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="lbServo">
+               <property name="text">
+                <string>Đang đóng</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupLastAccess">
+            <property name="title">
+             <string>Xác thực gần nhất</string>
+            </property>
+            <layout class="QFormLayout" name="lastAccessLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Họ tên</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="lbName">
+               <property name="text">
+                <string>---</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Mã người dùng</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="lbID">
+               <property name="text">
+                <string>---</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>ID vân tay</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="lbFingerID">
+               <property name="text">
+                <string>---</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Kết quả</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="lbResult">
+               <property name="text">
+                <string>Chưa xác thực</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Barrier</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="lbBarrier">
+               <property name="text">
+                <string>Đang đóng</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Thời gian</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="lbTime">
+               <property name="text">
+                <string>--/--/---- --:--:--</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupRecentLog">
+          <property name="title">
+           <string>Nhật ký ra vào gần đây</string>
+          </property>
+          <layout class="QVBoxLayout">
+           <item>
+            <widget class="QTableWidget" name="tblRecentLog">
+             <property name="rowCount">
+              <number>0</number>
+             </property>
+             <property name="columnCount">
+              <number>5</number>
+             </property>
+             <column>
+              <property name="text">
+               <string>Thời gian</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Họ tên</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>ID vân tay</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Kết quả</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Barrier</string>
+              </property>
+             </column>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabUsers">
+       <attribute name="title">
+        <string>Người dùng</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="usersLayout">
+        <item>
+         <layout class="QHBoxLayout" name="userToolbar">
+          <item>
+           <widget class="QPushButton" name="btnAddUser">
+            <property name="text">
+             <string>Thêm người dùng</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnEditUser">
+            <property name="text">
+             <string>Sửa</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDeleteUser">
+            <property name="text">
+             <string>Xóa</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnEnroll">
+            <property name="text">
+             <string>Đăng ký vân tay</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="userSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="searchLayout">
+          <item>
+           <widget class="QLabel" name="labelSearch">
+            <property name="text">
+             <string>Tìm kiếm:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="txtSearch">
+            <property name="placeholderText">
+             <string>Nhập mã người dùng hoặc họ tên...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnSearch">
+            <property name="text">
+             <string>Tìm kiếm</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tblUsers">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>6</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>Mã người dùng</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Họ tên</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Phòng ban</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>ID vân tay</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Trạng thái</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ghi chú</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabHistory">
+       <attribute name="title">
+        <string>Nhật ký</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="historyLayout">
+        <item>
+         <layout class="QHBoxLayout" name="historyFilterLayout">
+          <item>
+           <widget class="QLabel" name="labelFromDate">
+            <property name="text">
+             <string>Từ ngày:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateFrom">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="labelToDate">
+            <property name="text">
+             <string>Đến ngày:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateTo">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnFilterHistory">
+            <property name="text">
+             <string>Lọc</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnExport">
+            <property name="text">
+             <string>Xuất dữ liệu</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tblHistory">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="rowCount">
+           <number>0</number>
+          </property>
+          <property name="columnCount">
+           <number>7</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>Thời gian</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Họ tên</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Mã người dùng</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>ID vân tay</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Chiều</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Kết quả</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Barrier</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabSettings">
+       <attribute name="title">
+        <string>Cài đặt</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="settingsLayout">
+        <item>
+         <widget class="QGroupBox" name="groupBLESettings">
+          <property name="title">
+           <string>Cấu hình BLE</string>
+          </property>
+          <layout class="QFormLayout" name="bleSettingsLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Tên ESP32</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="txtDeviceName">
+             <property name="text">
+              <string>ParkingSystem-ESP32</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Service UUID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="txtServiceUUID">
+             <property name="text">
+              <string>12345678-1234-1234-1234-123456789000</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Status UUID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="txtStatusUUID">
+             <property name="text">
+              <string>12345678-1234-1234-1234-123456789001</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Command UUID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="txtCommandUUID">
+             <property name="text">
+              <string>12345678-1234-1234-1234-123456789002</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Trạng thái</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLabel" name="lbBLESettingStatus">
+             <property name="text">
+              <string>Chưa kết nối</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Kết nối</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QPushButton" name="btnReconnectBLE">
+             <property name="text">
+              <string>Quét và kết nối lại</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupDatabase">
+          <property name="title">
+           <string>Cơ sở dữ liệu</string>
+          </property>
+          <layout class="QFormLayout" name="databaseLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Loại cơ sở dữ liệu</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lbDatabaseType">
+             <property name="text">
+              <string>SQLite</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Tên database</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="txtDatabase">
+             <property name="text">
+              <string>parking.db</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Trạng thái</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="lbDatabaseStatus">
+             <property name="text">
+              <string>Ready</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupSystemInfo">
+          <property name="title">
+           <string>Thông tin hệ thống</string>
+          </property>
+          <layout class="QFormLayout" name="systemInfoLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Thiết bị xử lý</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Raspberry Pi</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Giao tiếp ESP32</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Bluetooth Low Energy (BLE)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Chế độ hoạt động</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Local / Offline</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSystem">
+    <property name="title">
+     <string>Hệ thống</string>
+    </property>
+   </widget>
+   <addaction name="menuSystem"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

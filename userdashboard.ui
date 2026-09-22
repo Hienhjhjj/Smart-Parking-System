@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserDashboard</class>
+ <widget class="QWidget" name="UserDashboard">
+  <property name="styleSheet">
+   <string notr="true">QWidget#UserDashboard { background:#F4F7FB; }
+QFrame.card { background:#FFFFFF; border:1px solid #DCE3EC; border-radius:12px; }
+QLabel.sectionTitle { color:#607D8B; font-size:12px; font-weight:bold; }
+QLabel.value { color:#263238; font-size:18px; font-weight:bold; }
+QLabel.smallValue { color:#455A64; font-size:14px; }
+QLabel.blueValue { color:#1565C0; font-size:22px; font-weight:bold; }
+QLabel.greenValue { color:#2E7D32; font-size:22px; font-weight:bold; }
+QLabel.orangeValue { color:#EF6C00; font-size:22px; font-weight:bold; }
+QLabel.muted { color:#78909C; font-size:13px; }
+QLabel.statusDot { color:#2E7D32; font-size:18px; }
+QLabel.resultOk { color:#2E7D32; font-size:18px; font-weight:bold; }
+QLabel.resultFail { color:#C62828; font-size:18px; font-weight:bold; }</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing"><number>12</number></property>
+   <property name="leftMargin"><number>22</number></property>
+   <property name="topMargin"><number>18</number></property>
+   <property name="rightMargin"><number>22</number></property>
+   <property name="bottomMargin"><number>18</number></property>
+
+   <item>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <layout class="QVBoxLayout" name="headerTextLayout">
+       <property name="spacing"><number>2</number></property>
+       <item>
+        <widget class="QLabel" name="lblGreeting">
+         <property name="styleSheet"><string notr="true">color:#1565C0; font-size:25px; font-weight:bold;</string></property>
+         <property name="text"><string>Xin chào!</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblUserCode">
+         <property name="styleSheet"><string notr="true">color:#78909C; font-size:14px;</string></property>
+         <property name="text"><string>Mã người dùng: ---</string></property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="headerSpacer">
+       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+       <property name="sizeHint" stdset="0"><size><width>40</width><height>20</height></size></property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbUserRole">
+       <property name="styleSheet"><string notr="true">background:#E8F1FC; color:#1565C0; border-radius:15px; padding:8px 14px; font-size:13px; font-weight:bold;</string></property>
+       <property name="text"><string>TÀI KHOẢN NGƯỜI DÙNG</string></property>
+       <property name="alignment"><set>Qt::AlignCenter</set></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item>
+    <widget class="QFrame" name="cardAccountInfo">
+     <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+     <layout class="QGridLayout" name="accountGrid">
+      <property name="horizontalSpacing"><number>28</number></property>
+      <property name="verticalSpacing"><number>10</number></property>
+      <property name="leftMargin"><number>18</number></property>
+      <property name="topMargin"><number>14</number></property>
+      <property name="rightMargin"><number>18</number></property>
+      <property name="bottomMargin"><number>14</number></property>
+      <item row="0" column="0"><widget class="QLabel" name="titleAccount"><property name="text"><string>MÃ NGƯỜI DÙNG</string></property></widget></item>
+      <item row="0" column="1"><widget class="QLabel" name="titleName"><property name="text"><string>HỌ VÀ TÊN</string></property></widget></item>
+      <item row="0" column="2"><widget class="QLabel" name="titleDepartment"><property name="text"><string>BỘ PHẬN</string></property></widget></item>
+      <item row="0" column="3"><widget class="QLabel" name="titleUsername"><property name="text"><string>TÀI KHOẢN</string></property></widget></item>
+      <item row="1" column="0"><widget class="QLabel" name="lbAccountCode"><property name="text"><string>---</string></property></widget></item>
+      <item row="1" column="1"><widget class="QLabel" name="lbAccountName"><property name="text"><string>---</string></property></widget></item>
+      <item row="1" column="2"><widget class="QLabel" name="lbDepartment"><property name="text"><string>---</string></property></widget></item>
+      <item row="1" column="3"><widget class="QLabel" name="lbUsername"><property name="text"><string>---</string></property></widget></item>
+      <item row="2" column="0"><widget class="QLabel" name="titleFingerprint"><property name="text"><string>ID VÂN TAY</string></property></widget></item>
+      <item row="2" column="1"><widget class="QLabel" name="titleStatus"><property name="text"><string>TRẠNG THÁI TÀI KHOẢN</string></property></widget></item>
+      <item row="2" column="2"><widget class="QLabel" name="titleInfoNote"><property name="text"><string>QUYỀN TRUY CẬP</string></property></widget></item>
+      <item row="2" column="3"><widget class="QLabel" name="titleAccessType"><property name="text"><string>PHƯƠNG THỨC XÁC THỰC</string></property></widget></item>
+      <item row="3" column="0"><widget class="QLabel" name="lbFingerprintId"><property name="text"><string>Chưa đăng ký</string></property></widget></item>
+      <item row="3" column="1"><widget class="QLabel" name="lbAccountStatus"><property name="text"><string>Hoạt động</string></property></widget></item>
+      <item row="3" column="2"><widget class="QLabel" name="lbAccessPermission"><property name="text"><string>Ra / vào bãi xe</string></property></widget></item>
+      <item row="3" column="3"><widget class="QLabel" name="lbAccessType"><property name="text"><string>Vân tay AS608</string></property></widget></item>
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout" name="statsLayout">
+     <property name="spacing"><number>12</number></property>
+     <item>
+      <widget class="QFrame" name="cardToday">
+       <property name="minimumSize"><size><width>0</width><height>82</height></size></property>
+       <layout class="QVBoxLayout" name="todayLayout"><property name="leftMargin"><number>16</number></property><property name="topMargin"><number>10</number></property><property name="rightMargin"><number>16</number></property><property name="bottomMargin"><number>10</number></property>
+        <item><widget class="QLabel" name="todayTitle"><property name="text"><string>LƯỢT RA / VÀO HÔM NAY</string></property></widget></item>
+        <item><layout class="QHBoxLayout" name="todayValueLayout"><item><widget class="QLabel" name="lbTodayCount"><property name="text"><string>0</string></property></widget></item><item><widget class="QLabel" name="todayCaption"><property name="text"><string>lượt xác thực thành công</string></property></widget></item><item><spacer name="todaySpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item></layout></item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="cardLastAccess">
+       <property name="minimumSize"><size><width>0</width><height>82</height></size></property>
+       <layout class="QVBoxLayout" name="lastAccessLayout"><property name="leftMargin"><number>16</number></property><property name="topMargin"><number>10</number></property><property name="rightMargin"><number>16</number></property><property name="bottomMargin"><number>10</number></property>
+        <item><widget class="QLabel" name="lastAccessTitle"><property name="text"><string>LẦN TRUY CẬP GẦN NHẤT</string></property></widget></item>
+        <item><widget class="QLabel" name="lbLastAccess"><property name="text"><string>Chưa có dữ liệu</string></property></widget></item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="cardGate">
+       <property name="minimumSize"><size><width>0</width><height>82</height></size></property>
+       <layout class="QVBoxLayout" name="gateLayout"><property name="leftMargin"><number>16</number></property><property name="topMargin"><number>10</number></property><property name="rightMargin"><number>16</number></property><property name="bottomMargin"><number>10</number></property>
+        <item><widget class="QLabel" name="gateTitle"><property name="text"><string>TRẠNG THÁI CỔNG</string></property></widget></item>
+        <item><layout class="QHBoxLayout" name="gateValueLayout"><item><widget class="QLabel" name="lbGateDot"><property name="text"><string>●</string></property></widget></item><item><widget class="QLabel" name="lbGateStatus"><property name="text"><string>SẴN SÀNG</string></property></widget></item><item><spacer name="gateSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item></layout></item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <item>
+    <widget class="QFrame" name="groupLastAuth">
+     <layout class="QVBoxLayout" name="lastAuthLayout">
+      <property name="spacing"><number>8</number></property>
+      <property name="leftMargin"><number>18</number></property><property name="topMargin"><number>12</number></property><property name="rightMargin"><number>18</number></property><property name="bottomMargin"><number>12</number></property>
+      <item><widget class="QLabel" name="lastAuthTitle"><property name="text"><string>XÁC THỰC GẦN NHẤT</string></property></widget></item>
+      <item><widget class="QLabel" name="lbLastResult"><property name="text"><string>Chưa có lần xác thực</string></property></widget></item>
+      <item><layout class="QHBoxLayout" name="lastAuthInfo"><property name="spacing"><number>28</number></property>
+       <item><widget class="QLabel" name="lbLastUser"><property name="text"><string>---</string></property></widget></item>
+       <item><widget class="QLabel" name="lbLastTime"><property name="text"><string>--/--/---- --:--:--</string></property></widget></item>
+       <item><widget class="QLabel" name="lbLastDirection"><property name="text"><string>Chiều: ---</string></property></widget></item>
+       <item><widget class="QLabel" name="lbLastBarrier"><property name="text"><string>Barrier: Đóng</string></property></widget></item>
+      </layout></item>
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QFrame" name="groupSystemStatus">
+     <layout class="QHBoxLayout" name="systemLayout"><property name="leftMargin"><number>18</number></property><property name="topMargin"><number>11</number></property><property name="rightMargin"><number>18</number></property><property name="bottomMargin"><number>11</number></property><property name="spacing"><number>35</number></property>
+      <item><layout class="QVBoxLayout" name="systemTextLayout"><item><widget class="QLabel" name="systemTitle"><property name="text"><string>TRẠNG THÁI HỆ THỐNG</string></property></widget></item><item><widget class="QLabel" name="lbSystemStatus"><property name="styleSheet"><string notr="true">color:#2E7D32; font-size:15px; font-weight:bold;</string></property><property name="text"><string>●  Hệ thống đang hoạt động</string></property></widget></item></layout></item>
+      <item><widget class="QLabel" name="lbGateReady"><property name="styleSheet"><string notr="true">color:#2E7D32; font-size:15px;</string></property><property name="text"><string>●  Cổng sẵn sàng</string></property></widget></item>
+      <item><spacer name="systemSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer></item>
+      <item><widget class="QLabel" name="lbSystemNote"><property name="text"><string>Hệ thống hoạt động nội bộ • Dữ liệu lưu trên Raspberry Pi</string></property><property name="alignment"><set>Qt::AlignRight|Qt::AlignVCenter</set></property></widget></item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="bottomSpacer"><property name="orientation"><enum>Qt::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

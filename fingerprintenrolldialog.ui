@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FingerprintEnrollDialog</class>
+ <widget class="QDialog" name="FingerprintEnrollDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>360</height>
+   </rect>
+  </property>
+
+  <property name="windowTitle">
+   <string>Đăng ký vân tay</string>
+  </property>
+
+  <layout class="QVBoxLayout" name="mainLayout">
+
+   <item>
+    <widget class="QLabel" name="labelTitle">
+     <property name="text">
+      <string>ĐĂNG KÝ VÂN TAY</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 20px; font-weight: bold;</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QFormLayout" name="infoLayout">
+
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelUserCode">
+       <property name="text">
+        <string>Mã người dùng:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="0" column="1">
+      <widget class="QLabel" name="lbUserCode">
+       <property name="text">
+        <string>---</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelUserName">
+       <property name="text">
+        <string>Họ tên:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="1" column="1">
+      <widget class="QLabel" name="lbUserName">
+       <property name="text">
+        <string>---</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="2" column="0">
+      <widget class="QLabel" name="labelFingerprintID">
+       <property name="text">
+        <string>ID vân tay:</string>
+       </property>
+      </widget>
+     </item>
+
+     <item row="2" column="1">
+      <widget class="QLabel" name="lbFingerprintID">
+       <property name="text">
+        <string>---</string>
+       </property>
+      </widget>
+     </item>
+
+    </layout>
+   </item>
+
+   <item>
+    <widget class="QGroupBox" name="groupStatus">
+     <property name="title">
+      <string>Trạng thái</string>
+     </property>
+
+     <layout class="QVBoxLayout">
+
+      <item>
+       <widget class="QLabel" name="lbStatus">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>90</height>
+         </size>
+        </property>
+
+        <property name="text">
+         <string>Sẵn sàng đăng ký</string>
+        </property>
+
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+
+        <property name="styleSheet">
+         <string notr="true">font-size: 16px;</string>
+        </property>
+       </widget>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   <item>
+    <layout class="QHBoxLayout" name="buttonLayout">
+
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+      </spacer>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="btnStart">
+       <property name="text">
+        <string>Bắt đầu đăng ký</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="btnCancel">
+       <property name="text">
+        <string>Hủy</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <spacer name="horizontalSpacer2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+      </spacer>
+     </item>
+
+    </layout>
+   </item>
+
+  </layout>
+ </widget>
+
+ <resources/>
+ <connections/>
+</ui>
